@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heart Risk Assessment — CardioCore Hospital</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">✦</span>
+        <span>CardioCore</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="index.html#doctors" class="nav-link">Our Doctors</a></li>
+        <li><a href="predictor.html" class="nav-link active">Risk Assessment</a></li>
+        <li><a href="appointment.html" class="nav-cta-btn">Book Appointment</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       ASSESSMENT SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="assessment-section" id="assessment">
+    <div class="assessment-bg-pattern"></div>
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag section-tag-light">ML-Powered Tool</div>
+        <h2 class="section-title" style="color:#fff;">Heart Disease<br /><em>Risk Assessment</em></h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.7);">Answer 13 clinically-validated questions. Our machine learning model will assess your cardiovascular risk profile in seconds.</p>
+      </div>
+
+      <div class="form-card">
+        <div class="form-card-header">
+          <div class="form-progress-bar">
+            <div class="form-progress-fill" id="progressFill"></div>
+          </div>
+          <span class="form-progress-label" id="progressLabel">0 of 13 completed</span>
+        </div>
+
+        <form id="heartRiskForm" novalidate>
+
+          <div class="form-section-label">Personal Information</div>
+          <div class="form-grid">
+
+            <div class="form-group" data-field="age">
+              <label for="age">
+                <span class="label-icon">👤</span>
+                Age
+                <span class="label-hint">years</span>
+              </label>
+              <input type="number" id="age" name="age" min="20" max="100" placeholder="e.g. 52" required />
+              <div class="field-error">Please enter a valid age (20–100)</div>
+            </div>
+
+            <div class="form-group" data-field="sex">
+              <label for="sex">
+                <span class="label-icon">⚧</span>
+                Biological Sex
+              </label>
+              <div class="select-wrapper">
+                <select id="sex" name="sex" required>
+                  <option value="" disabled selected>Select…</option>
+                  <option value="1">Male</option>
+                  <option value="0">Female</option>
+                </select>
+              </div>
+              <div class="field-error">Please select a value</div>
+            </div>
+          </div>
+
+          <div class="form-section-label">Cardiac Symptoms</div>
+          <div class="form-grid">
+
+            <div class="form-group" data-field="cp">
+              <label for="cp">
+                <span class="label-icon">💢</span>
+                Chest Pain Type
+                <span class="tooltip-trigger" data-tip="0=Typical Angina, 1=Atypical Angina, 2=Non-Anginal Pain, 3=Asymptomatic">ⓘ</span>
+              </label>
+              <div class="select-wrapper">
+                <select id="cp" name="cp" required>
+                  <option value="" disabled selected>Select type…</option>
+                  <option value="0">0 — Typical Angina</option>
+                  <option value="1">1 — Atypical Angina</option>
+                  <option value="2">2 — Non-Anginal Pain</option>
+                  <option value="3">3 — Asymptomatic</option>
+                </select>
+              </div>
+              <div class="field-error">Please select a chest pain type</div>
+            </div>
+
+            <div class="form-group" data-field="exang">
+              <label for="exang">
+                <span class="label-icon">🏃</span>
+                Exercise-Induced Angina
+              </label>
+              <div class="select-wrapper">
+                <select id="exang" name="exang" required>
+                  <option value="" disabled selected>Select…</option>
+                  <option value="1">Yes</option>
+                  <option value="0">No</option>
+                </select>
+              </div>
+              <div class="field-error">Please select a value</div>
+            </div>
+
+          </div>
+
+          <div class="form-section-label">Vital Signs &amp; Lab Results</div>
+          <div class="form-grid">
+
+            <div class="form-group" data-field="trestbps">
+              <label for="trestbps">
+                <span class="label-icon">🩺</span>
+                Resting Blood Pressure
+                <span class="label-hint">mmHg</span>
+              </label>
+              <input type="number" id="trestbps" name="trestbps" min="80" max="220" placeholder="e.g. 130" required />
+              <div class="field-error">Please enter a valid value</div>
+            </div>
+
+            <div class="form-group" data-field="chol">
+              <label for="chol">
+                <span class="label-icon">🧪</span>
+                Serum Cholesterol
+                <span class="label-hint">mg/dl</span>
+              </label>
+              <input type="number" id="chol" name="chol" min="100" max="600" placeholder="e.g. 240" required />
+              <div class="field-error">Please enter a valid value</div>
+            </div>
+
+            <div class="form-group" data-field="fbs">
+              <label for="fbs">
+                <span class="label-icon">🍬</span>
+                Fasting Blood Sugar &gt; 120 mg/dl
+                <span class="tooltip-trigger" data-tip="Is your fasting blood sugar greater than 120 mg/dl?">ⓘ</span>
+              </label>
+              <div class="select-wrapper">
+                <select id="fbs" name="fbs" required>
+                  <option value="" disabled selected>Select…</option>
+                  <option value="1">True (&gt; 120 mg/dl)</option>
+                  <option value="0">False (≤ 120 mg/dl)</option>
+                </select>
+              </div>
+              <div class="field-error">Please select a value</div>
+            </div>
+
+            <div class="form-group" data-field="thalach">
+              <label for="thalach">
+                <span class="label-icon">❤️</span>
+                Maximum Heart Rate Achieved
+                <span class="label-hint">bpm</span>
+              </label>
+              <input type="number" id="thalach" name="thalach" min="60" max="220" placeholder="e.g. 150" required />
+              <div class="field-error">Please enter a valid value</div>
+            </div>
+
+          </div>
+
+          <div class="form-section-label">Diagnostic Test Results</div>
+          <div class="form-grid">
+
+            <div class="form-group" data-field="restecg">
+              <label for="restecg">
+                <span class="label-icon">📈</span>
+                Resting EKG Results
+                <span class="tooltip-trigger" data-tip="0=Normal, 1=ST-T wave abnormality, 2=Left ventricular hypertrophy">ⓘ</span>
+              </label>
+              <div class="select-wrapper">
+                <select id="restecg" name="restecg" required>
+                  <option value="" disabled selected>Select result…</option>
+                  <option value="0">0 — Normal</option>
+                  <option value="1">1 — ST-T Wave Abnormality</option>
+                  <option value="2">2 — Left Ventricular Hypertrophy</option>
+                </select>
+              </div>
+              <div class="field-error">Please select a value</div>
+            </div>
+
+            <div class="form-group" data-field="oldpeak">
+              <label for="oldpeak">
+                <span class="label-icon">📉</span>
+                ST Depression (Oldpeak)
+                <span class="tooltip-trigger" data-tip="ST depression induced by exercise relative to rest">ⓘ</span>
+              </label>
+              <input type="number" id="oldpeak" name="oldpeak" step="0.1" min="0" max="10" placeholder="e.g. 1.5" required />
+              <div class="field-error">Please enter a valid value</div>
+            </div>
+
+            <div class="form-group" data-field="slope">
+              <label for="slope">
+                <span class="label-icon">📊</span>
+                Slope of Peak Exercise ST Segment
+                <span class="tooltip-trigger" data-tip="0=Upsloping, 1=Flat, 2=Downsloping">ⓘ</span>
+              </label>
+              <div class="select-wrapper">
+                <select id="slope" name="slope" required>
+                  <option value="" disabled selected>Select slope…</option>
+                  <option value="0">0 — Upsloping</option>
+                  <option value="1">1 — Flat</option>
+                  <option value="2">2 — Downsloping</option>
+                </select>
+              </div>
+              <div class="field-error">Please select a value</div>
+            </div>
+
+            <div class="form-group" data-field="ca">
+              <label for="ca">
+                <span class="label-icon">🫀</span>
+                Number of Major Vessels (Fluoroscopy)
+                <span class="tooltip-trigger" data-tip="Number of major vessels (0–4) colored by fluoroscopy">ⓘ</span>
+              </label>
+              <div class="select-wrapper">
+                <select id="ca" name="ca" required>
+                  <option value="" disabled selected>Select count…</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+              <div class="field-error">Please select a value</div>
+            </div>
+
+            <div class="form-group form-group-full" data-field="thal">
+              <label for="thal">
+                <span class="label-icon">☢️</span>
+                Thallium Stress Test Result
+                <span class="tooltip-trigger" data-tip="1=Normal, 2=Fixed Defect, 3=Reversible Defect">ⓘ</span>
+              </label>
+              <div class="select-wrapper">
+                <select id="thal" name="thal" required>
+                  <option value="" disabled selected>Select result…</option>
+                  <option value="1">1 — Normal</option>
+                  <option value="2">2 — Fixed Defect</option>
+                  <option value="3">3 — Reversible Defect</option>
+                </select>
+              </div>
+              <div class="field-error">Please select a value</div>
+            </div>
+
+          </div>
+
+          <div class="form-submit-area">
+            <button type="submit" class="btn btn-submit" id="submitBtn">
+              <span class="btn-text">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+                Analyse My Heart Risk
+              </span>
+              <span class="btn-loading" id="btnLoading" style="display:none;">
+                <span class="spinner"></span>
+                Analysing…
+              </span>
+            </button>
+            <p class="submit-note">🔒 Your data is processed locally and never stored.</p>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       RESULT MODAL
+  ═══════════════════════════════════════════ -->
+  <div class="modal-overlay" id="resultModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card" id="modalCard">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <div class="modal-header" id="modalHeader">
+        <div class="modal-icon" id="modalIcon"></div>
+        <h2 id="modalTitle">Assessment Result</h2>
+        <p id="modalSubtitle"></p>
+      </div>
+
+      <div class="modal-body">
+        <div class="risk-gauge-wrap">
+          <div class="risk-gauge">
+            <svg class="gauge-svg" viewBox="0 0 200 120">
+              <path class="gauge-bg" d="M 20 100 A 80 80 0 0 1 180 100" stroke-linecap="round"/>
+              <path class="gauge-fill" id="gaugeFill" d="M 20 100 A 80 80 0 0 1 180 100" stroke-linecap="round"/>
+            </svg>
+            <div class="gauge-value">
+              <span id="riskPercentage">—</span>
+              <small>Risk Score</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="risk-label-wrap">
+          <div class="risk-label" id="riskLabel"></div>
+          <p class="risk-description" id="riskDescription"></p>
+        </div>
+
+        <div class="risk-factors" id="riskFactors"></div>
+
+        <div class="modal-disclaimer">
+          <div class="disclaimer-icon">⚕️</div>
+          <p><strong>Disclaimer:</strong> This tool is powered by an AI model for educational purposes only. It is not a substitute for professional medical diagnosis. Please consult a doctor for actual medical advice.</p>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn btn-primary" onclick="document.getElementById('resultModal').classList.remove('active')">
+            Close
+          </button>
+          <a href="appointment.html" class="btn btn-ghost" onclick="document.getElementById('resultModal').classList.remove('active')">
+            Consult a Doctor
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       TOOLTIP
+  ═══════════════════════════════════════════ -->
+  <div class="tooltip-bubble" id="tooltipBubble"></div>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="color:#fff;">
+            <span class="logo-icon">✦</span>
+            <span>CardioCore</span>
+          </a>
+          <p>Advanced cardiac care powered by clinical expertise and artificial intelligence.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#doctors">Our Doctors</a></li>
+            <li><a href="predictor.html">Risk Assessment</a></li>
+            <li><a href="appointment.html">Book Appointment</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>📍 12 Cardiac Avenue, New Delhi, India</p>
+          <p>📞 +91 98765 43210</p>
+          <p>✉️ care@cardiocore.in</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 CardioCore Hospital. For educational demonstration purposes only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

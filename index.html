@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CardioCore Hospital — Advanced Cardiac Care</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">✦</span>
+        <span>CardioCore</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="#doctors" class="nav-link">Our Doctors</a></li>
+        <li><a href="predictor.html" class="nav-link">Risk Assessment</a></li>
+        <li><a href="predictor.html" class="nav-cta-btn">Free Assessment</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          AI-Powered Cardiac Diagnostics
+        </div>
+        <h1 class="hero-title">
+          Your Heart Deserves<br />
+          <em>Expert Care.</em>
+        </h1>
+        <p class="hero-subtitle">
+          CardioCore Hospital combines world-class cardiologists with
+          cutting-edge machine learning to give you clarity about your
+          cardiovascular health — fast, free, and private.
+        </p>
+        <div class="hero-actions">
+          <a href="predictor.html" class="btn btn-primary">
+            <span>Take Free Heart Risk Assessment</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="appointment.html" class="btn btn-ghost">Book an Appointment</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>98%</strong>
+            <span>Patient Satisfaction</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <strong>24/7</strong>
+            <span>Emergency Care</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <strong>15k+</strong>
+            <span>Lives Assessed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="ecg-card">
+          <div class="ecg-card-label">Live ECG Monitor</div>
+          <div class="ecg-line-wrapper">
+            <svg class="ecg-svg" viewBox="0 0 400 100" preserveAspectRatio="none">
+              <polyline class="ecg-trace" points="
+                0,50 30,50 40,50 50,20 60,80 70,50 90,50
+                100,50 110,50 120,20 130,80 140,50 160,50
+                170,50 180,50 190,20 200,80 210,50 230,50
+                240,50 250,50 260,20 270,80 280,50 300,50
+                310,50 320,50 330,20 340,80 350,50 400,50
+              "/>
+            </svg>
+          </div>
+          <div class="ecg-readings">
+            <div class="ecg-reading">
+              <span class="reading-val pulse-anim">72</span>
+              <span class="reading-label">BPM</span>
+            </div>
+            <div class="ecg-reading">
+              <span class="reading-val">120/80</span>
+              <span class="reading-label">mmHg</span>
+            </div>
+            <div class="ecg-reading">
+              <span class="reading-val status-green">Normal</span>
+              <span class="reading-label">Status</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-card-float hero-card-float-1">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1565c0" stroke-width="2"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+          <p>Cardiology Center of Excellence</p>
+        </div>
+        <div class="hero-card-float hero-card-float-2">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <p>ML Model: 92% Accuracy</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Scroll to explore</span>
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FEATURES STRIP
+  ═══════════════════════════════════════════ -->
+  <section class="features-strip">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div>
+            <h3>Instant Results</h3>
+            <p>AI analysis in under 3 seconds</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div>
+            <h3>100% Private</h3>
+            <p>No data stored on our servers</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <h3>Clinically Validated</h3>
+            <p>Based on UCI Heart Disease dataset</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <h3>Expert Backed</h3>
+            <p>Reviewed by board-certified cardiologists</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       DOCTORS SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="doctors-section" id="doctors">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Our Specialists</div>
+        <h2 class="section-title">Meet the Physicians<br /><em>Behind Your Care</em></h2>
+        <p class="section-subtitle">Our team of board-certified cardiologists brings decades of combined experience to every patient interaction.</p>
+      </div>
+
+      <div class="doctors-grid">
+
+        <div class="doctor-card">
+          <div class="doctor-img-wrap">
+            <div class="doctor-img-placeholder">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#90a4ae" stroke-width="1.2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <div class="doctor-badge-chip">Interventional</div>
+          </div>
+          <div class="doctor-info">
+            <h3>Dr. Priya Mehra</h3>
+            <p class="doctor-specialty">Interventional Cardiologist</p>
+            <p class="doctor-bio">Specialist in minimally invasive cardiac procedures with 18 years at AIIMS New Delhi. Fellow of the American College of Cardiology.</p>
+            <div class="doctor-meta">
+              <span>🎓 MBBS, MD, DM — AIIMS Delhi</span>
+              <span>⭐ 4.9 (312 reviews)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="doctor-card doctor-card-featured">
+          <div class="featured-ribbon">Chief of Cardiology</div>
+          <div class="doctor-img-wrap">
+            <div class="doctor-img-placeholder">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#90a4ae" stroke-width="1.2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <div class="doctor-badge-chip">Electrophysiology</div>
+          </div>
+          <div class="doctor-info">
+            <h3>Dr. Arjun Sharma</h3>
+            <p class="doctor-specialty">Cardiac Electrophysiologist</p>
+            <p class="doctor-bio">Pioneer in AI-assisted arrhythmia detection and ablation therapy. Over 2,000 successful ablation procedures. Published in NEJM and Lancet.</p>
+            <div class="doctor-meta">
+              <span>🎓 MBBS, MD — PGI Chandigarh</span>
+              <span>⭐ 5.0 (498 reviews)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="doctor-card">
+          <div class="doctor-img-wrap">
+            <div class="doctor-img-placeholder">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#90a4ae" stroke-width="1.2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <div class="doctor-badge-chip">Prevention</div>
+          </div>
+          <div class="doctor-info">
+            <h3>Dr. Kavya Nair</h3>
+            <p class="doctor-specialty">Preventive Cardiologist</p>
+            <p class="doctor-bio">Expert in risk stratification, lifestyle medicine, and cardiac rehabilitation. Trained at Johns Hopkins and dedicated to women's heart health.</p>
+            <div class="doctor-meta">
+              <span>🎓 MBBS, MD — KMC Manipal</span>
+              <span>⭐ 4.8 (267 reviews)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="color:#fff;">
+            <span class="logo-icon">✦</span>
+            <span>CardioCore</span>
+          </a>
+          <p>Advanced cardiac care powered by clinical expertise and artificial intelligence.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#doctors">Our Doctors</a></li>
+            <li><a href="predictor.html">Risk Assessment</a></li>
+            <li><a href="appointment.html">Book Appointment</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>📍 12 Cardiac Avenue, New Delhi, India</p>
+          <p>📞 +91 98765 43210</p>
+          <p>✉️ care@cardiocore.in</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 CardioCore Hospital. For educational demonstration purposes only.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
